@@ -1,0 +1,78 @@
+{% load static %}
+<head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SkoolnSkill</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+   
+
+  </style>
+</head>
+<body class="container-fullwidth" style="background-color: black;">
+
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark "> -->
+  <nav class="navbar navbar-expand-sm navbar-trans navbar-inverse">
+  <a class="navbar-brand" href="#"> <img src="{% static 'img\\companylogo.png' %}" alt="logo" style="width: 200px;"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}"><img class="btn" src="{% static 'img\\home.png' %}" width="80px" height="70px" alt='contact'/></a>
+      </li>
+      {% if user.is_authenticated %}
+      
+      <center>
+        <li style="color: orangered; padding-left:20px;"> Hello {{ user.username }} !</li>
+      </center>
+        
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}"><img class="btn" src="{% static 'img\\about.png' %}" width="80px" height="70px" alt='contact'> </a>
+      </li> 
+      <li class="nav-item" >
+        <a class="nav-link" href="{% url 'contact' %}"><img class="btn" src="{% static 'img\\contact.png' %}" width="80px" height="70px" alt='contact'/></a>
+       </li>
+       <li class="nav-item" >
+        <a class="nav-link" href="{% url 'profile1' %}"><img class="btn" src="{% static 'img\\profile.png' %}" width="80px" height="70px" alt='profile' /></a>
+      </li>
+       <li class="nav-item" >
+        <a class="nav-link" href="{% url 'logout' %}"><img class="btn" src="{% static 'img\\logout.png' %}" width="80px" height="70px" alt='contact'> </a>
+      </li>    
+        
+        {% else %}  
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}"><img class="btn" src="{% static 'img\\login.png' %}" width="80px" height="70px" alt='contact'> </a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}"><img class="btn" src="{% static 'img\\contact.png' %}" width="80px" height="70px" alt='contact'/></a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}"><img class="btn" src="{% static 'img\\cropped_signUp.png' %}" width="80px" height="70px" alt='contact'/></a>
+       </li>
+      </ul>
+        
+      
+       {% endif %}   
+    
+  </div>
+  
+</nav>
+<br>
+
+<div class="container">
+</div>
+
+</body>
+</html>
+{% block content %}
+{% endblock %}
+

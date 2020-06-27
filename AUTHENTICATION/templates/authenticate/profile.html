@@ -1,0 +1,106 @@
+{% extends 'boot.html' %}
+{% load static %}
+{% block content %}
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <style>
+           body {
+              background-color: black;
+           
+            }  
+            #textcolor{
+                color:white;
+                float:left;               
+                width:150px;
+                padding:10px;
+            }
+                #inputcolor{
+                color:red;
+                
+            }
+                   
+            .table{
+                border:white;
+                border-width: 3px !important;
+                
+                padding-right: 30%;
+                
+                
+                
+            }
+            .container{
+                padding-left: justify;
+            }
+            </style>
+
+    </head>
+
+<body>
+
+    <!--
+    <a class="btn btn-lg" href="{% url 'logout' %}" style="background-color: black;"><img src="{% static 'img\\logout.png' %}" alt="logout" width="60" height="60"></a>
+      &nbsp;&nbsp;
+   <a class="btn  btn-lg" href="{% url 'contact' %}" style="background-color: black;">Contact</a>
+    <a href="{% url 'contact' %}"><img class="btn" src="{% static 'img\\contact.png' %}" width="70px" height="70px" alt='contact'/></a>
+      &nbsp;&nbsp;
+    <a class="btn  btn-lg" href="{% url 'home' %}" style="background-color: black;"><img src="{% static 'img\\home.png' %}" alt="home" width="60" height="60"></a>
+    <p>Welcome {{ data2.username }}</p>
+-->
+ 
+    <div id="textalign">
+        {% if data.Photo %}
+            <div class="container">
+            <img src="{{data.Photo.url}}" class="rounded-circle" alt="Cinque Terre" width="200" height="200" > 
+            </div>
+        {% endif %}
+    <div>
+    <br>
+    <br>
+    <table class="table">
+        <tr>
+            <td  id="textcolor">Name</td>
+            <td  id="inputcolor">{{ data2.first_name }}&nbsp;&nbsp;{{ data2.last_name }}</td>
+            
+        </tr>
+
+        <tr>
+           <td id="textcolor">Email</td>
+           <td id="inputcolor">{{ data2.email }}</td>
+        </tr>
+         <tr>
+             <td id="textcolor">DOB</td>
+             <td id="inputcolor">{{ data.dob }}</td>
+             </td>
+         </tr>
+         <tr>
+             <td id="textcolor">Country</td>
+             <td id="inputcolor">{{ data.country }}</td>
+         </tr>
+         <tr>
+            <td id="textcolor">State</td>
+            <td id="inputcolor">{{ data.State }}</td>
+        </tr>
+        <tr>
+            <td id="textcolor">District</td>
+            <td id="inputcolor">{{ data.District }}</td>
+        </tr>
+        <tr>
+            <td id="textcolor">Phone</td>
+            <td id="inputcolor">{{ data.phone }}</td>
+        </tr>
+    </table>
+    {{data.errors}}
+</div>
+</div>
+
+
+</body>
+
+
+{% endblock %}

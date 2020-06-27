@@ -1,0 +1,74 @@
+{% extends 'boot.html' %}
+{% load static %}
+{% block content %}
+<head>
+<style>
+body{
+    background-color: black;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top:10px;
+    }
+
+
+  
+.border{
+   
+   width: fit-content;
+   height: 200px; 
+   padding-top: 15px;
+   border-radius: 10px;
+   border-width: 3px !important;
+}
+.table{
+
+  width:fit-content;
+  margin-left:30px;
+}
+
+</style>
+</head>
+<body style="background-color:black">
+  <br><br>
+  <center>
+   <div class="border">
+    
+     <div class="rounded">
+     
+     <div class="clearfix">
+  <div class="container-fluid">
+    
+<h3><center>We'd love to hear from you...</center></h3>
+  <p><center>Whether you have a question about or services or any suggestion,
+      <br>
+      our team is ready to answer all your questions.</center></p>
+    </div>
+    </div>
+
+</div>
+</div>
+</center>
+<div>
+  <img src="{% static 'img\\con_img.jpg' %}"  id="pic" alt="telephoneimage" style="height:200px; float: right; margin-right:5px; margin-top:2px"/>
+</div>
+  <br>
+  <br>
+
+  <table class="table table-borderless">
+      <tr>
+          <td style="height:25px"><img src="{% static 'img\\american_flag.png' %}" width= "30px" height="28px" ></td>
+          <td style="color:white; height:80px; padding-left: 20px;">+1 (216) 269-3871</td>
+        </tr>
+  
+        <tr>
+          <td style="height:25px;"><img src="{% static 'img\\email_logo.png' %}" width= "30px" height="28px"></td>
+          <td style="color:white; padding-left: 20px;">query@skoolnskill.com</td>
+      </tr>  
+    </table>
+
+
+
+
+<!--<a class="btn  btn-lg" href="{% url 'home' %}" style="background-color: black;"><img src="{% static 'img\\home.png' %}" alt="home" width="60" height="60"></a>-->
+</body>
+{% endblock %}

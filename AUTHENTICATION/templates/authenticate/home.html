@@ -1,0 +1,51 @@
+{% load static %}
+{% block content %}
+<style> 		
+	.btn { 
+		text-decoration: none; 
+		border: none; 
+		padding: 105px 40px 0px 40px;
+		font-size: 16px; 
+			
+		color: #fff; 
+		border-radius: 5px; 
+		box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+	
+		cursor: pointer; 
+		outline: none; 
+		transition: 0.2s all; 
+	} 
+	.btn:active { 
+		transform: scale(0.98); 
+		box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+	}
+
+	.table{
+
+		padding-right:0px 300px 0px 70px;
+	}
+</style> 
+
+<body  bgcolor="black">
+	<div class="container">
+		<p>
+	         <div style="width:450px; height:600px; float:left;"> 
+			<img src = "{% static 'img\\home_page.jpg' %}"  style="width:720px;"/>
+		</div>
+			<div style="height:600px; float:right;">
+				
+				<table class="table" style="padding-top:150;">
+
+				<tr>
+				<td><a href="{% url 'login' %}" ><img class="btn" src = "{% static 'img\\login.png' %}" alt="login" width="110" height = "110" style="float:center" /></a></td>
+				<td><a href="{% url 'contact' %}"><img class= "btn" src="{% static 'img\\contact.png' %}" alt="contact" width="110" height = "110" style="float:center"/></a></td>
+				<td><a href="{% url 'register' %}"><img class="btn" src = "{% static 'img\\cropped_signUp.png' %}" alt="sign up" width="110" height = "110" style="float:center"/></a></td>
+				</tr>
+			</table>
+		
+			</div>
+</p>
+</div>
+</body>
+
+{% endblock %}

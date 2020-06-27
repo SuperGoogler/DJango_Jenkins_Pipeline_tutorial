@@ -1,0 +1,113 @@
+{% extends 'boot.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <title>Profile</title>
+    <style>
+ .table1{
+        width:370px;
+        text-align: left;   
+            
+        
+        border-style:groove groove groove groove;
+        border-color:white;
+        border-radius: 15px;
+        box-shadow: 20px 20px 50px grey;
+        
+           
+        }  
+  #label{
+           padding:0px 2px 2px 80px;
+           width:150px;
+           height: 40px;
+           color:white;
+
+
+        }
+
+        #value{
+            padding:0px 2px 2px 80px;
+            color:white;  
+        }
+        #pic{
+           
+        
+            width:250px;
+            height:200;
+            margin-left:110px;
+            margin-top: 30px;
+            border-style:groove groove groove groove;
+        border-color:white;
+        border-radius: 15px;
+        box-shadow: 20px 20px 50px grey;
+        
+        }
+ 
+    </style>
+    
+</head>
+<body>
+     <div>
+      <div class="container-fluid" style="float:justify;">  
+         <div class="row">
+              {% if data.Photo %}  
+                <img src="{{data.Photo.url}}"  id="pic" alt="Cinque Terre" /> 
+  
+              {% endif %}
+            </div>
+        </div>
+    
+      <br><br>
+      
+          <center>
+           <div class="container-fluid" style="float:justify;">
+           <div class="table1">
+            <table class="table table-borderless table-dark" style="background-color: black;">
+                <tr> 
+        <td  id="label">Name</td>
+        <td  id="value">{{ data2.first_name }}&nbsp;&nbsp;{{ data2.last_name }}</td>
+        
+    </tr>    
+
+    <tr>
+        
+       <td id="label">Email</td>
+       <td id="value">{{ data2.email }}</td>
+    </tr>
+     <tr>
+        
+         <td id="label">DOB</td>
+         <td id="value">{{ data.dob }}</td>
+         </td>
+     </tr>
+     <tr>
+        
+         <td id="label">Country</td>
+         <td id="value">{{ data.country }}</td>
+     </tr>
+     <tr>
+        
+        <td id="label">State</td>
+        <td id="value">{{ data.State }}</td>
+    </tr>
+    <tr>
+        
+        <td id="label">District</td>
+        <td id="value">{{ data.District }}</td>
+    </tr>
+    <tr>
+        
+        <td id="label">Phone</td>
+        <td id="value">{{ data.phone }}</td>
+    </tr>
+</table>
+ </div>
+</div>
+</center>
+
+{{data.errors}}
+
+
+</body>
+
+{% endblock %}

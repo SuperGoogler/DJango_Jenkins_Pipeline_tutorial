@@ -1,0 +1,59 @@
+{% extends 'boot.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>about us</title>
+    <style>
+        body{
+
+
+        background-color: black;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-top:10px;
+        }
+        #content
+        {   
+              
+            padding-left: 120px;
+            padding-right: 120px;
+            padding-top:10px;
+
+
+           
+        }
+        .up{
+
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class ="up"> 
+    <h1><center>About Us</center></h1>
+
+    <p><center>---------------OUR STORY---------------</center></p>
+
+        </div>
+<p id="content">Founded in 2020, schoolnskill is a trusted community for successful people to identify and nurture the right talent by providing 
+financial opportunities like scholarships and opportunities like events to talented aspirants.
+<br>
+
+Whether a career in academics, sports or any other skill, we connect aspirants with opportunities in pursuing every individual’s dream. 
+The world is full of successful people who are willing to guide young students, sportsmen and skilled individuals to groom their talents 
+through scholarships and financial help and every educational institution is now in search for talents that can be nurtured in the right 
+environment and create success stories. Schoolnskill is the perfect platform to avail them all. </p>
+    <br>
+    <center>
+<p>
+
+    <img src="{% static 'img\\chem_lab.jpg' %}" alt="chemistry lab" style="height:200px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{% static 'img\\athelete.jpeg' %}" alt="athelete" style="height:200px"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="{% static 'img\\forest_adv.jpg' %}" alt="forest adventure" style="height:200px"/>
+</p>
+        </center>
+</body>
+{% endblock %}
