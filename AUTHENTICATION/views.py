@@ -9,18 +9,18 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def home(request):  # Home Page(domain.com)
-    return render(request, 'authenticate\\home.html', {})
+    return render(request, 'authenticate/home.html', {})
 
 
 def contact(request):  # Contact Page
-    return render(request, 'authenticate\\contact.html', {})
+    return render(request, 'authenticate/contact.html', {})
 
 
 def thank_you(request): # thank you page
-    return render(request, 'authenticate\\thank_you.html', {})
+    return render(request, 'authenticate/thank_you.html', {})
 
 def about(request): # about page
-    return render(request, 'authenticate\\about.html', {})
+    return render(request, 'authenticate/about.html', {})
 
 
 @csrf_exempt
@@ -42,7 +42,7 @@ def login_user(request):  # Login Page
             messages.error(request, f'error while login, please try again')
             return redirect('login')
     else:
-        return render(request, 'authenticate\\login.html', {})
+        return render(request, 'authenticate/login.html', {})
 
 
 def logout_user(request):  # Contact Page
@@ -63,7 +63,7 @@ def register_user(request):  # Register Page
             messages.error(request, f'Please correct the error below.')
     else:
         form = SignUpForm()
-    return render(request, 'authenticate\\register.html', context={'form': form})
+    return render(request, 'authenticate/register.html', context={'form': form})
 
 
 def userprofileview(request):  # Authenticated user filling the form to complete the registration
@@ -87,7 +87,7 @@ def userprofileview(request):  # Authenticated user filling the form to complete
             messages.error(request, AssertionError)
     else:
         form = UserProfileForm()
-    return render(request, 'authenticate\\bolo.html', context={'form': form})
+    return render(request, 'authenticate/bolo.html', context={'form': form})
 
 @login_required(login_url="/login/")
 def profile_page(request):  # Fetching data from DB to show user's complete profile page
@@ -95,7 +95,7 @@ def profile_page(request):  # Fetching data from DB to show user's complete prof
     #data2 = get_object_or_404(User, user=request.user)
     data2 = User.objects.get(id = request.user.id)
     context = {'data': data, 'data2': data2}
-    return render(request, 'authenticate\\profile1.html', context)
+    return render(request, 'authenticate/profile1.html', context)
 
 
 

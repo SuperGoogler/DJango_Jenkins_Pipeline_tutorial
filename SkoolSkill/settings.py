@@ -25,7 +25,7 @@ SECRET_KEY = '8w6)l$q@jrnq802lbk-n2x5#h$etta7+8mvbao*fcekx(2hj=4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['100.25.148.205', 'schoolnskill.com', 'LP-2PNJ2Z2']
 
 
 # Application definition
@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'SkoolSkill\\static')
+    os.path.join(BASE_DIR, 'SkoolSkill/static')
 ]
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
