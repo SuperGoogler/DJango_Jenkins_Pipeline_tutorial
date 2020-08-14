@@ -1,0 +1,28 @@
+{% load static %}
+{% block content %}
+
+
+<h2 class="text-center">Edit Profile</h2>
+	<form method="POST" action="{% url 'editUserProfile' %}">
+		{% csrf_token %}
+
+		{% if form.errors and form1.errors %}
+				{% if messages %}
+				<ul class="messages ">
+				  {% for message in messages %}
+				  <ol class="breadcrumb ">
+					<li {% if message.success %} class="{{ message.success }} " {% endif %}><strong>{{ message }} {{form.errors}}</strong> </li>
+				  </ol>
+				  {% endfor %}
+				</ul>
+				{% endif %}
+			</div>
+		{% endif %}
+			{{ form.as_p }}
+			{{ form1.as_p }}
+		<input type="submit" value="update" class="btn btn-secondry">
+	</form>
+
+	<br/><br/>
+
+{% endblock %}

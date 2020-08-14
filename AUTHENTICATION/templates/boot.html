@@ -7,13 +7,12 @@
   <title>SkoolnSkill</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">profile1.html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script data-ad-client="ca-pub-7888075162942443" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <style>
-   
-
   </style>
 </head>
 <body class="container-fullwidth" style="background-color: black;">
@@ -29,6 +28,8 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'home' %}"><img class="btn" src="{% static 'img\\home.png' %}" width="80px" height="70px" alt='contact'/></a>
       </li>
+
+
       {% if user.is_authenticated %}
       
       <center>
@@ -46,17 +47,26 @@
       </li>
        <li class="nav-item" >
         <a class="nav-link" href="{% url 'logout' %}"><img class="btn" src="{% static 'img\\logout.png' %}" width="80px" height="70px" alt='contact'> </a>
-      </li>    
-        
+      </li>
+      </li>
+        <li class="nav-item" >
+        <a class="nav-link" href="{% url 'pass_edit' %}"><input type="submit" value="update password" class="btn btn-secondry" alt='update password'> </a>
+      </li>
+      
+
+<!-- The website view that a user would see if no one is logged in -->
         {% else %}  
-      <li class="nav-item">
+       <li class="nav-item">
         <a class="nav-link" href="{% url 'login' %}"><img class="btn" src="{% static 'img\\login.png' %}" width="80px" height="70px" alt='contact'> </a>
-      </li> 
-      <li class="nav-item">
+       </li> 
+       <li class="nav-item">
         <a class="nav-link" href="{% url 'contact' %}"><img class="btn" src="{% static 'img\\contact.png' %}" width="80px" height="70px" alt='contact'/></a>
        </li>
        <li class="nav-item">
         <a class="nav-link" href="{% url 'register' %}"><img class="btn" src="{% static 'img\\cropped_signUp.png' %}" width="80px" height="70px" alt='contact'/></a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}"><img class="btn" src="{% static 'img\\about.png' %}" width="80px" height="70px" alt='about us' > </a>
        </li>
       </ul>
         

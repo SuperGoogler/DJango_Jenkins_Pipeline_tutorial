@@ -25,7 +25,7 @@ SECRET_KEY = '8w6)l$q@jrnq802lbk-n2x5#h$etta7+8mvbao*fcekx(2hj=4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['100.25.148.205', 'schoolnskill.com', 'LP-2PNJ2Z2']
+ALLOWED_HOSTS = ['54.87.236.231', 'schoolnskill.com', 'LP-2PNJ2Z2', 'www.schoolnskill.com']
 
 
 # Application definition

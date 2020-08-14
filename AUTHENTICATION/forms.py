@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from .models import UserProfile
 from django import forms
@@ -27,3 +27,10 @@ class UserProfileForm(forms.ModelForm):
         fields = ('Photo', 'dob', 'country', 'State', 'District', 'phone')
 
 
+class UserProfileUpdateForm(UserChangeForm):
+    email = forms.EmailField()
+    password = forms.CharField(label="", widget=forms.TextInput(attrs={'type': 'hidden'}))
+
+    class Meta:
+        model = User
+        fields = ('email', 'password', )
